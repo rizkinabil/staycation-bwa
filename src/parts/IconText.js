@@ -5,7 +5,7 @@ import Button from "elements/Button";
 export default function IconText() {
    return (
       <Button className="brand-text-icon" href="" type="link">
-         Emsa<span className="text-gray-900"> Epsilon.</span>
+         Stay<span className="text-gray-900">cation.</span>
       </Button>
    );
 }
