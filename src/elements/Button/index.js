@@ -14,21 +14,21 @@ export default function Button(props) {
       if (props.onClick) props.onClick();
    };
 
-   if (props.isLoading || props.isDisabled)
+   if (props.isLoading || props.isDisabled) {
       if (props.isDisabled) className.push("disabled");
-   return (
-      <span className={className.join(" ")} style={props.style}>
-         {props.isLoading ? (
-            <>
-               <span class="spinner-border spinner-border-sm mx-5"></span>
-               <span class="sr-only">Loading...</span>
-            </>
-         ) : (
-            props.children
-         )}
-      </span>
-   );
-
+      return (
+         <span className={className.join(" ")} style={props.style}>
+            {props.isLoading ? (
+               <>
+                  <span class="spinner-border spinner-border-sm mx-5"></span>
+                  <span class="sr-only">Loading...</span>
+               </>
+            ) : (
+               props.children
+            )}
+         </span>
+      );
+   }
    if (props.type === "link") {
       if (props.isExternal) {
          return (
@@ -37,21 +37,14 @@ export default function Button(props) {
                className={className.join(" ")}
                style={props.style}
                target={props.target === "_blank" ? "_blank" : undefined}
-               rel={
-                  props.target == "_blank" ? "noopener noreferrer" : undefined
-               }
+               rel={props.target === "_blank" ? "noopener noreferrer" : undefined}
             >
                {props.children}
             </a>
          );
       } else {
          return (
-            <Link
-               to={props.href}
-               className={className.join(" ")}
-               style={props.style}
-               onClick={onClick}
-            >
+            <Link to={props.href} className={className.join(" ")} style={props.style} onClick={onClick}>
                {props.children}
             </Link>
          );
@@ -59,11 +52,7 @@ export default function Button(props) {
    }
 
    return (
-      <button
-         className={className.join(" ")}
-         style={props.style}
-         onClick={onClick}
-      >
+      <button className={className.join(" ")} style={props.style} onClick={onClick}>
          {props.children}
       </button>
    );
