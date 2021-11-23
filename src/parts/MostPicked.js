@@ -1,6 +1,5 @@
 import React from "react";
 import Button from "elements/Button";
-import moduleName from "module";
 
 export default function MostPicked(props) {
    return (

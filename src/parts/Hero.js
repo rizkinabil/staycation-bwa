@@ -12,7 +12,7 @@ import Button from "elements/Button";
 export default function Hero(props) {
    function showMostPicked() {
       window.scrollTo({
-         top: props.refMostPicked.current.offsetTop - 3,
+         top: props.refMostPicked.current.offsetTop - 30,
          behavior: "smooth",
       });
    }
