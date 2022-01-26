@@ -9,20 +9,26 @@ import Footer from "parts/Footer";
 
 import landingPage from "json/landingPage.json";
 export default class LandingPage extends Component {
-   constructor(props) {
-      super(props);
-      this.refMostPicked = React.createRef();
-   }
-   render() {
-      return (
-         <>
-            <Header {...this.props}></Header>
-            <Hero refMostPicked={this.refMostPicked} data={landingPage.hero} />
-            <MostPicked refMostPicked={this.refMostPicked} data={landingPage.mostPicked}></MostPicked>
-            <Categories data={landingPage.categories} />
-            <Testimony data={landingPage.testimonial} />
-            <Footer />
-         </>
-      );
-   }
+  constructor(props) {
+    super(props);
+    this.refMostPicked = React.createRef();
+  }
+
+  componentDidMount() {
+    window.title = "Staycation | Home";
+    window.scrollTo(0, 0);
+  }
+
+  render() {
+    return (
+      <>
+        <Header {...this.props}></Header>
+        <Hero refMostPicked={this.refMostPicked} data={landingPage.hero} />
+        <MostPicked refMostPicked={this.refMostPicked} data={landingPage.mostPicked}></MostPicked>
+        <Categories data={landingPage.categories} />
+        <Testimony data={landingPage.testimonial} />
+        <Footer />
+      </>
+    );
+  }
 }

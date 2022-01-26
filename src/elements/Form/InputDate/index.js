@@ -71,7 +71,7 @@ export default function Date(props) {
   );
 }
 
-Date.props = {
+Date.propTypes = {
   value: propTypes.object,
   onChange: propTypes.func,
   placeholder: propTypes.string,
