@@ -4,7 +4,7 @@ import propTypes from "prop-types";
 
 export default function Stepper(props) {
   const { steps, initialStep } = props;
-  const stepsKeys = Object.keys(setps);
+  const stepsKeys = Object.keys(steps);
 
   const [CurrentStep, setCurrentStep] = useState(stepsKeys.indexOf(initialStep) > -1 ? initialStep : stepsKeys[0]);
 
