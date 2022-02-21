@@ -1,9 +1,12 @@
-import React from "react";
-import Fade from "react-reveal/Fade";
+import React from 'react';
+import Fade from 'react-reveal/Fade';
 
-import Breadcrumb from "elements/Breadcrumb";
+import Breadcrumb from 'elements/Breadcrumb';
 
-export default function PageDetailTitle({ data, breadcrumb }) {
+export default function PageDetailTitle({
+  data,
+  breadcrumb,
+}) {
   return (
     <section className="container spacing-sm">
       <Fade bottom>
@@ -12,7 +15,7 @@ export default function PageDetailTitle({ data, breadcrumb }) {
             <Breadcrumb data={breadcrumb} />
           </div>
           <div className="col-auto text-center">
-            <h1 className="2">{data.name}</h1>
+            <h1 className="2">{data.title}</h1>
             <span className="text-gray-400">
               {data.city}, {data.country}
             </span>
